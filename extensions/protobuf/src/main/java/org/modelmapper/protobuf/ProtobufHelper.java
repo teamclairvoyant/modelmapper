@@ -93,6 +93,19 @@ public class ProtobufHelper {
     throw new NoSuchMethodException(methodName);
   }
 
+  public static Method adder(Class<?> type, String field) throws NoSuchMethodException {
+    String methodName = "add" + formatMethodName(field);
+    for (Method method : type.getMethods()) {
+      if (isSetterForBuilder(method, methodName))
+        return method;
+    }
+    throw new NoSuchMethodException(methodName);
+  }
+
+  public static Class<?> iterableType(Class<?> type, String field) throws NoSuchMethodException {
+    return adder(type, field).getParameterTypes()[0];
+  }
+
   public static Method hasMethod(Class<?> type, String field) throws NoSuchMethodException {
     String methodName = "has" + formatMethodName(field);
     return type.getMethod(methodName);
