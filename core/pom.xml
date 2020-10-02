@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.modelmapper</groupId>
+    <groupId>org.clairvoyant.modelmapper</groupId>
     <artifactId>modelmapper-parent</artifactId>
     <version>2.3.9-SNAPSHOT</version>
   </parent>
@@ -126,19 +126,19 @@
           <relocations>
             <relocation>
               <pattern>net.bytebuddy</pattern>
-              <shadedPattern>org.modelmapper.internal.bytebuddy</shadedPattern>
+              <shadedPattern>org.clairvoyant.modelmapper.internal.bytebuddy</shadedPattern>
             </relocation>
             <relocation>
               <pattern>org.objectweb.asm</pattern>
-              <shadedPattern>org.modelmapper.internal.asm</shadedPattern>
+              <shadedPattern>org.clairvoyant.modelmapper.internal.asm</shadedPattern>
             </relocation>
             <relocation>
               <pattern>org.objenesis</pattern>
-              <shadedPattern>org.modelmapper.internal.objenesis</shadedPattern>
+              <shadedPattern>org.clairvoyant.modelmapper.internal.objenesis</shadedPattern>
             </relocation>
             <relocation>
               <pattern>net.jodah.typetools</pattern>
-              <shadedPattern>org.modelmapper.internal.typetools</shadedPattern>
+              <shadedPattern>org.clairvoyant.modelmapper.internal.typetools</shadedPattern>
             </relocation>
           </relocations>
         </configuration>
@@ -178,8 +178,8 @@
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <!-- do not export internal packages, remove autoimport -->
             <Export-Package>
-              !org.modelmapper.internal.*,
-              org.modelmapper*;-noimport:=true
+              !org.clairvoyant.modelmapper.internal.*,
+              org.clairvoyant.modelmapper*;-noimport:=true
             </Export-Package>
             <!-- this directive allow to calculate imports also of dependencies -->
             <Embed-Dependency>*;scope=runtime;inline=true</Embed-Dependency>

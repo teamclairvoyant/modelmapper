@@ -34,7 +34,7 @@
     <target>
       <!-- The destination package of your generated classes (within the 
         destination directory) -->
-      <packageName>org.modelmapper.jooq.test</packageName>
+      <packageName>org.clairvoyant.modelmapper.jooq.test</packageName>
 
       <!-- The destination directory of your generated classes -->
       <directory>target/generated</directory>

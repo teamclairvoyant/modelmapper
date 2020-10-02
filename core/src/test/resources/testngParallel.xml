@@ -4,7 +4,7 @@
 	<test name="Functional" preserve-order="false" parallel="methods"
 		thread-count="25">
 		<classes>
-			<class name="org.modelmapper.ModelMapperTest" />
+			<class name="org.clairvoyant.modelmapper.ModelMapperTest" />
 		</classes>
 	</test>
 </suite> 

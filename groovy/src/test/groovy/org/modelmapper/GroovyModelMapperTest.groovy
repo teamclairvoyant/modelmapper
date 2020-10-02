@@ -1,4 +1,4 @@
-package org.modelmapper
+package org.clairvoyant.modelmapper
 
 import org.testng.annotations.Test
 
