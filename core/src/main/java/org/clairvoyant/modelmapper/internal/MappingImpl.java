@@ -28,7 +28,7 @@ import org.clairvoyant.modelmapper.spi.PropertyInfo;
 /**
  * @author Jonathan Halterman
  */
-abstract class MappingImpl implements InternalMapping, Comparable<MappingImpl> {
+public abstract class MappingImpl implements InternalMapping, Comparable<MappingImpl> {
   private final List<PropertyInfo> destinationMutators;
   private final boolean explicit;
   private final String path;

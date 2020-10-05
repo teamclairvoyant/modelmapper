@@ -20,6 +20,6 @@ package org.clairvoyant.modelmapper.internal;
  * 
  * @author Jonathan Halterman
  */
-interface Mutator extends InternalPropertyInfo {
+public interface Mutator extends InternalPropertyInfo {
   void setValue(Object subject, Object value);
 }

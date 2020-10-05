@@ -27,7 +27,7 @@ import org.clairvoyant.modelmapper.spi.PropertyMapping;
 /**
  * @author Jonathan Halterman
  */
-class PropertyMappingImpl extends MappingImpl implements PropertyMapping {
+public class PropertyMappingImpl extends MappingImpl implements PropertyMapping {
   private final List<PropertyInfo> sourceAccessors;
   boolean cyclic;
 

@@ -96,7 +96,7 @@ public class MappingContextImpl<S, D> implements MappingContext<S, D>, Provision
    *
    * @param inheritValues whether values from the source {@code context} should be inherited
    */
-  MappingContextImpl(MappingContextImpl<?, ?> context, S source, Class<S> sourceType,
+  public MappingContextImpl(MappingContextImpl<?, ?> context, S source, Class<S> sourceType,
       D destination, Class<D> destinationType, Type genericDestinationType, MappingImpl mapping,
       boolean inheritValues) {
     this.parent = context;

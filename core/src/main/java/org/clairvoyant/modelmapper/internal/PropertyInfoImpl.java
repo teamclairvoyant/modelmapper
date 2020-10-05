@@ -34,7 +34,7 @@ import org.clairvoyant.modelmapper.spi.ValueWriter;
  * 
  * @author Jonathan Halterman
  */
-abstract class PropertyInfoImpl<M extends Member> implements PropertyInfo {
+public abstract class PropertyInfoImpl<M extends Member> implements PropertyInfo {
   protected final Class<?> initialType;
   protected final M member;
   protected final Class<?> type;
@@ -87,7 +87,7 @@ abstract class PropertyInfoImpl<M extends Member> implements PropertyInfo {
     }
   }
 
-  static class MethodAccessor extends AbstractMethodInfo implements Accessor {
+  public static class MethodAccessor extends AbstractMethodInfo implements Accessor {
     MethodAccessor(Class<?> initialType, Method method, String name) {
       super(initialType, method, name);
     }
