@@ -176,6 +176,21 @@ class TypeMapImpl<S, D> implements TypeMap<S, D> {
   }
 
   @Override
+  public List<PropertyInfo> getUnmappedRootProperties() {
+    PathProperties pathProperties = getDestinationProperties();
+
+    pathProperties.removeNestedPathProperties();
+
+    synchronized (mappings) {
+      for (Map.Entry<String, InternalMapping> entry : mappings.entrySet()) {
+        pathProperties.matchAndRemoveRootField(entry.getKey());
+      }
+    }
+
+    return pathProperties.get();
+  }
+
+  @Override
   public D map(S source) {
     Class<S> sourceType = Types.deProxy(source.getClass());
     MappingContextImpl<S, D> context = new MappingContextImpl<S, D>(source, sourceType, null,
@@ -286,6 +301,19 @@ class TypeMapImpl<S, D> implements TypeMap<S, D> {
 
     Errors errors = new Errors();
     List<PropertyInfo> unmappedProperties = getUnmappedProperties();
+    if (!unmappedProperties.isEmpty())
+      errors.errorUnmappedProperties(this, unmappedProperties);
+
+    errors.throwValidationExceptionIfErrorsExist();
+  }
+
+  @Override
+  public void validateRootFieldMappings() {
+    if (converter != null || preConverter != null || postConverter != null)
+      return;
+
+    Errors errors = new Errors();
+    List<PropertyInfo> unmappedProperties = getUnmappedRootProperties();
     if (!unmappedProperties.isEmpty())
       errors.errorUnmappedProperties(this, unmappedProperties);
 
@@ -425,6 +453,7 @@ class TypeMapImpl<S, D> implements TypeMap<S, D> {
   }
 
   private static final class PathProperties {
+    public static final String DOT = ".";
     List<PathProperty> pathProperties = new ArrayList<PathProperty>();
 
     private void matchAndRemove(String path) {
@@ -446,6 +475,45 @@ class TypeMapImpl<S, D> implements TypeMap<S, D> {
         if (iterator.next().path.startsWith(path))
           iterator.remove();
     }
+
+    private void matchAndRemoveRootField(String path){
+
+      PathProperty matchedPathProperty = null;
+
+      for (PathProperty pathProperty:
+          pathProperties) {
+
+        if(pathProperty.path.equals(path)){
+          matchedPathProperty = pathProperty;
+        }
+
+      }
+
+      if(matchedPathProperty!=null){
+        pathProperties.remove(matchedPathProperty);
+      }
+    }
+
+    private void removeNestedPathProperties(){
+
+      List<PathProperty> nestedPathProperties = new ArrayList<PathProperty>();
+
+      for (PathProperty pathProperty:
+          pathProperties) {
+
+        if(!containsOnce(pathProperty.path, DOT)){
+          nestedPathProperties.add(pathProperty);
+        }
+
+      }
+      pathProperties.removeAll(nestedPathProperties);
+    }
+
+    private boolean containsOnce(String s, String sub) {
+      int firstIndex = s.indexOf(sub);
+      return firstIndex >=0 && firstIndex == s.lastIndexOf(sub);
+    }
+
 
     public List<PropertyInfo> get() {
       List<PropertyInfo> mutators = new ArrayList<PropertyInfo>(pathProperties.size());

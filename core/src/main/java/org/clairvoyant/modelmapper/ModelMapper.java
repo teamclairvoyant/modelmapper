@@ -548,6 +548,27 @@ public class ModelMapper {
   }
 
   /**
+   * Validates that <b>every</b> property for each configured TypeMap is
+   * mapped, or that a {@code Converter} was
+   * {@link TypeMap#setConverter(Converter) set} for the TypeMap. If not, a ConfigurationException
+   * is thrown detailing any missing mappings.
+   *
+   * @throws ValidationException if any TypeMaps contain unmapped properties
+   */
+  public void validatePropertyMappings() {
+    Errors errors = new Errors();
+    for (TypeMap<?, ?> typeMap : getTypeMaps()) {
+      try {
+        typeMap.validateRootFieldMappings();
+      } catch (ValidationException e) {
+        errors.merge(e.getErrorMessages());
+      }
+    }
+
+    errors.throwValidationExceptionIfErrorsExist();
+  }
+
+  /**
    * Register a module
    *
    * @param module a module for extension

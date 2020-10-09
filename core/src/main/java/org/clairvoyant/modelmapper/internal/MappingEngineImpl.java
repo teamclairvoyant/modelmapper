@@ -208,6 +208,11 @@ public class MappingEngineImpl implements MappingEngine {
         source = accessor.getValue(source);
         if (source == null)
           return null;
+        if (EntityHolder.class.isInstance(source)) {
+          EntityHolder<?> entityHolder = (EntityHolder<?>) source;
+          entityHolder.setEntity(null);
+          entityHolder.setMappingContext(null);
+        }
         if (!Iterables.isIterable(source.getClass())) {
           Object circularDest = context.sourceToDestination.get(source);
           if (circularDest != null)

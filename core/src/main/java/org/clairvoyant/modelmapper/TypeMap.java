@@ -140,6 +140,8 @@ public interface TypeMap<S, D> {
    */
   List<PropertyInfo> getUnmappedProperties();
 
+  List<PropertyInfo> getUnmappedRootProperties();
+
   /**
    * Maps {@code source} to an instance of type {@code D}.
    * 
@@ -231,6 +233,14 @@ public interface TypeMap<S, D> {
    * @throws ValidationException if any TypeMaps contain unmapped properties
    */
   void validate();
+
+  /**
+   * Validates that <b>every</b> property is mapped , or that a {@code Converter} was {@link #setConverter(Converter) set}. If not, a
+   * ConfigurationException is thrown detailing any missing mappings.
+   *
+   * @throws ValidationException if any TypeMaps contain unmapped properties
+   */
+  void validateRootFieldMappings();
 
   /**
    * Adds a mapping into {@code TypeMap} by defining {@code sourceGetter} -> {@code destinationSetter}
