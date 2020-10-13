@@ -309,7 +309,7 @@ class TypeMapImpl<S, D> implements TypeMap<S, D> {
 
   @Override
   public void validateRootFieldMappings() {
-    if (converter != null || preConverter != null || postConverter != null)
+    if (converter != null)
       return;
 
     Errors errors = new Errors();
