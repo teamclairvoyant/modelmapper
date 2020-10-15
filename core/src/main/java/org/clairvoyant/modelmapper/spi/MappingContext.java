@@ -104,6 +104,11 @@ public interface MappingContext<S, D> {
   S getSource();
 
   /**
+   * Returns the parent source object being mapped from.
+   **/
+  Object getParentSource();
+
+  /**
    * Returns the source type being mapped from.
    */
   Class<S> getSourceType();

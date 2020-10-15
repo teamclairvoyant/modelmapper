@@ -210,6 +210,11 @@ public class MappingContextImpl<S, D> implements MappingContext<S, D>, Provision
   }
 
   @Override
+  public Object getParentSource() {
+    return parentSource;
+  }
+
+  @Override
   public Class<S> getSourceType() {
     return sourceType;
   }
