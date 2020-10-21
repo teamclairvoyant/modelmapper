@@ -1,7 +1,7 @@
 ## Clairvoyant ModelMapper
 
 * Moved the java packages from org.modelmapper to org.clairvoyant.modelmapper
-* Added a new method on to validate the property mapping org.clairvoyant.modelmapper.ModelMapper#validatePropertyMappings()
+* Added a new method to validate the property mapping org.clairvoyant.modelmapper.ModelMapper#validatePropertyMappings()
 * Added a new interface - org.clairvoyant.modelmapper.internal.EntityHolder
 * Made the following classes and interfaces public.
   * org.clairvoyant.modelmapper.internal.MappingContextImpl
