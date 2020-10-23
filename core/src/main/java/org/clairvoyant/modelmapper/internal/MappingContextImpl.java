@@ -270,7 +270,7 @@ public class MappingContextImpl<S, D> implements MappingContext<S, D>, Provision
       sourceToDestination.put(source, destination);
   }
 
-  void setParentSource(Object parentSource) {
+  public void setParentSource(Object parentSource) {
     this.parentSource = parentSource;
   }
 

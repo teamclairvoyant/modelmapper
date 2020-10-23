@@ -11,5 +11,9 @@
   * org.clairvoyant.modelmapper.internal.MethodAccessor
   * org.clairvoyant.modelmapper.internal.PropertyMappingImpl
   
+* Made the following methods public.
+  * org.clairvoyant.modelmapper.internal.MappingContextImpl#setParentSource(Object parentSource)
+  * org.clairvoyant.modelmapper.internal.MappingContextImpl#getParentSource()
+  
 * Modified the method org.clairvoyant.modelmapper.internal.MappingEngineImpl#propertyMap
 * Modified the method org.clairvoyant.modelmapper.internal.MappingEngineImpl#resolveSourceValue
