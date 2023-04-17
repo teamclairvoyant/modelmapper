@@ -1,4 +1,4 @@
-package org.modelmapper.flattening.example1;
+package org.clairvoyant.modelmapper.flattening.example1;
 
 public class Customer {
   private String name;

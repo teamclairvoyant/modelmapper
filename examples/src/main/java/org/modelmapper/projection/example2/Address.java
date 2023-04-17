@@ -1,4 +1,4 @@
-package org.modelmapper.projection.example2;
+package org.clairvoyant.modelmapper.projection.example2;
 
 public class Address {
   private String street;

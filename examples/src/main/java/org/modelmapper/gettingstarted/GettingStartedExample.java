@@ -1,9 +1,9 @@
-package org.modelmapper.gettingstarted;
+package org.clairvoyant.modelmapper.gettingstarted;
 
 import static org.testng.Assert.assertEquals;
 
-import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.PropertyMap;
 
 /**
  * http://modelmapper.org/getting-started/

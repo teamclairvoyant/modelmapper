@@ -1,4 +1,4 @@
-package org.modelmapper;
+package org.clairvoyant.modelmapper;
 
 import static org.testng.Assert.assertEquals;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.modelmapper.config.Configuration.AccessLevel;
-import org.modelmapper.spi.MappingContext;
+import org.clairvoyant.modelmapper.config.Configuration.AccessLevel;
+import org.clairvoyant.modelmapper.spi.MappingContext;
 
 public class ComplexConversion {
   public static class PaymentInfo {

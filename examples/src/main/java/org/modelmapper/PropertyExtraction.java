@@ -1,11 +1,11 @@
-package org.modelmapper;
+package org.clairvoyant.modelmapper;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.UUID;
 
-import org.modelmapper.config.Configuration.AccessLevel;
-import org.modelmapper.spi.MappingContext;
+import org.clairvoyant.modelmapper.config.Configuration.AccessLevel;
+import org.clairvoyant.modelmapper.spi.MappingContext;
 
 /**
  * From https://github.com/jhalterman/modelmapper/issues/90#issuecomment-32583382

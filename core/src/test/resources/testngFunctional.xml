@@ -3,7 +3,7 @@
 <suite verbose="2" name="ModelMapper suite">
 	<test name="Functional" preserve-order="false">
 		<packages>
-			<package name="org.modelmapper.functional.*" />
+			<package name="org.clairvoyant.modelmapper.functional.*" />
 		</packages>
 	</test>
 </suite> 

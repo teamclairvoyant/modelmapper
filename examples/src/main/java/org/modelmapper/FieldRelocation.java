@@ -1,11 +1,11 @@
-package org.modelmapper;
+package org.clairvoyant.modelmapper;
 
 import static org.testng.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.modelmapper.spi.MappingContext;
+import org.clairvoyant.modelmapper.spi.MappingContext;
 
 public class FieldRelocation {
   public static class Person {
@@ -88,7 +88,7 @@ public class FieldRelocation {
 
     // Alternatively, using a provider
     // modelMapper.getConfiguration().setProvider(new Provider<AnotherCar>() {
-    // public AnotherCar get(org.modelmapper.Provider.ProvisionRequest<AnotherCar> request) {
+    // public AnotherCar get(org.clairvoyant.modelmapper.Provider.ProvisionRequest<AnotherCar> request) {
     // AnotherCar anotherCar = new AnotherCar();
     // anotherCar.setPersonName(((Person) request.getSource()).getName());
     // return anotherCar;

@@ -1,8 +1,8 @@
-package org.modelmapper.projection.example1;
+package org.clairvoyant.modelmapper.projection.example1;
 
 import static org.testng.Assert.assertEquals;
 
-import org.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.ModelMapper;
 
 public class ProjectionExample1 {
   public static void main(String... args) {

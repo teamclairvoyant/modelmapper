@@ -1,6 +1,6 @@
 # ModelMapper 
 [![CI](https://github.com/modelmapper/modelmapper/actions/workflows/ci.yml/badge.svg)](https://github.com/modelmapper/modelmapper/actions/workflows/ci.yml) 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.modelmapper/modelmapper/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.modelmapper/modelmapper)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.clairvoyant.modelmapper/modelmapper/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.clairvoyant.modelmapper/modelmapper)
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ModelMapper is an intelligent object mapping library that automatically maps objects to each other. It uses a convention based approach while providing a simple refactoring safe API for handling specific use cases.

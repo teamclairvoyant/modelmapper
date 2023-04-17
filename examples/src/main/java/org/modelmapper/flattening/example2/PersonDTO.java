@@ -1,4 +1,4 @@
-package org.modelmapper.flattening.example2;
+package org.clairvoyant.modelmapper.flattening.example2;
 
 public class PersonDTO {
   String city;

@@ -1,4 +1,4 @@
-package org.modelmapper.gettingstarted;
+package org.clairvoyant.modelmapper.gettingstarted;
 
 public class Customer {
   private Name name;

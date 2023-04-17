@@ -4,7 +4,7 @@
 
   <parent>
     <artifactId>modelmapper-parent</artifactId>
-    <groupId>org.modelmapper</groupId>
+    <groupId>org.clairvoyant</groupId>
     <version>3.1.2-SNAPSHOT</version>
   </parent>
 
@@ -17,7 +17,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.modelmapper</groupId>
+      <groupId>org.clairvoyant.modelmapper</groupId>
       <artifactId>modelmapper</artifactId>
       <version>${project.version}</version>
     </dependency>

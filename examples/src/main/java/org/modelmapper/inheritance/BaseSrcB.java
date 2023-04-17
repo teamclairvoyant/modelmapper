@@ -1,4 +1,4 @@
-package org.modelmapper.inheritance;
+package org.clairvoyant.modelmapper.inheritance;
 
 public class BaseSrcB extends BaseSrc {
 }

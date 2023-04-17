@@ -1,8 +1,8 @@
-package org.modelmapper.inheritance;
+package org.clairvoyant.modelmapper.inheritance;
 
-import org.modelmapper.ModelMapper;
-import org.modelmapper.Provider;
-import org.modelmapper.TypeMap;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.Provider;
+import org.clairvoyant.modelmapper.TypeMap;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 public class InheritanceExample1 {
 
   public static void main(String... args) {
-    org.modelmapper.inheritance.C c = new org.modelmapper.inheritance.C(Arrays.asList(new BaseSrcA(), new BaseSrcB()));
+    org.clairvoyant.modelmapper.inheritance.C c = new org.clairvoyant.modelmapper.inheritance.C(Arrays.asList(new BaseSrcA(), new BaseSrcB()));
 
 
     ModelMapper modelMapper = new ModelMapper();

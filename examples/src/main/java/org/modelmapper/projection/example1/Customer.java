@@ -1,4 +1,4 @@
-package org.modelmapper.projection.example1;
+package org.clairvoyant.modelmapper.projection.example1;
 
 public class Customer {
   private String name;

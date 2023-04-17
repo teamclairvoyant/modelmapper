@@ -1,10 +1,10 @@
-package org.modelmapper.projection.example2;
+package org.clairvoyant.modelmapper.projection.example2;
 
 import static org.testng.Assert.assertEquals;
 
-import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
-import org.modelmapper.convention.MatchingStrategies;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.PropertyMap;
+import org.clairvoyant.modelmapper.convention.MatchingStrategies;
 
 public class ProjectionExample2 {
   public static void main(String... args) {
