@@ -15,7 +15,7 @@
  */
 package org.modelmapper.protobuf;
 
-import static org.modelmapper.spi.StrongTypeConditionalConverter.wrap;
+import static org.clairvoyant.modelmapper.spi.StrongTypeConditionalConverter.wrap;
 
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.DoubleValue;
@@ -23,13 +23,13 @@ import com.google.protobuf.Int32Value;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.StringValue;
 import java.util.List;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.Module;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.Module;
 import org.modelmapper.protobuf.primitive.BoolConverters;
 import org.modelmapper.protobuf.primitive.DoubleConverters;
 import org.modelmapper.protobuf.primitive.IntConverters;
 import org.modelmapper.protobuf.primitive.StringConverters;
-import org.modelmapper.spi.ConditionalConverter;
+import org.clairvoyant.modelmapper.spi.ConditionalConverter;
 
 /**
  * Module to support protocol buffer with ModelMapper..

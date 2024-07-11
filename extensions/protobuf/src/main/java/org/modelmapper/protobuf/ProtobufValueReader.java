@@ -20,8 +20,8 @@ import com.google.protobuf.MessageOrBuilder;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collection;
-import org.modelmapper.internal.Errors;
-import org.modelmapper.spi.ValueReader;
+import org.clairvoyant.modelmapper.internal.Errors;
+import org.clairvoyant.modelmapper.spi.ValueReader;
 
 /**
  * Protocol buffer ValueReader implementation.

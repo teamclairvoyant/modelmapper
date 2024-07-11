@@ -1,8 +1,8 @@
 package org.modelmapper.protobuf;
 
 import com.google.protobuf.BoolValue;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.NameTokenizers;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.convention.NameTokenizers;
 import org.modelmapper.protobuf.pojo.ProtoCommon;
 import org.modelmapper.protobuf.pojo.TestMessageProto.TestMessage;
 import org.testng.annotations.BeforeMethod;

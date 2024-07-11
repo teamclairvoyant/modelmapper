@@ -17,8 +17,8 @@ package org.modelmapper.protobuf;
 
 import com.google.protobuf.Message;
 import com.google.protobuf.Message.Builder;
-import org.modelmapper.spi.ConditionalConverter;
-import org.modelmapper.spi.MappingContext;
+import org.clairvoyant.modelmapper.spi.ConditionalConverter;
+import org.clairvoyant.modelmapper.spi.MappingContext;
 
 /**
  * Converts {@link Message} to {@link Builder}

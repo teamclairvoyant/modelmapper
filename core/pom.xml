@@ -26,12 +26,21 @@
     </dependency>
     <dependency>
       <groupId>net.bytebuddy</groupId>
-      <artifactId>byte-buddy-dep</artifactId>
+      <artifactId>byte-buddy</artifactId>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>net.bytebuddy</groupId>-->
+<!--      <artifactId>byte-buddy-dep</artifactId>-->
+<!--    </dependency>-->
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>3.1.0</version>
     </dependency>
 
     <!-- Test Dependencies -->
     <dependency>
-      <groupId>javassist</groupId>
+      <groupId>org.javassist</groupId>
       <artifactId>javassist</artifactId>
       <scope>test</scope>
     </dependency>
@@ -46,8 +55,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -73,8 +82,20 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.3.0</version>
         <executions>
           <execution>
             <goals>
@@ -83,6 +104,11 @@
           </execution>
         </executions>
         <configuration>
+          <artifactSet>
+            <excludes>
+              <exclude>jakarta.persistence:jakarta.persistence-api</exclude>
+            </excludes>
+          </artifactSet>
           <relocations>
             <relocation>
               <pattern>net.bytebuddy</pattern>
@@ -166,5 +192,12 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>LMSFeed</id>
+      <url>https://pkgs.dev.azure.com/GCENextGen/NextGenLMS/_packaging/LMSFeed/maven/v1</url>
+    </repository>
+  </distributionManagement>
 
 </project>

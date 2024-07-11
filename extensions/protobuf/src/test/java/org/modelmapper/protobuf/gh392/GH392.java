@@ -4,8 +4,8 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.config.Configuration.AccessLevel;
+import org.clairvoyant.modelmapper.ModelMapper;
+import org.clairvoyant.modelmapper.config.Configuration.AccessLevel;
 import org.modelmapper.protobuf.ProtobufModule;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

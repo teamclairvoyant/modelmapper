@@ -23,7 +23,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import org.modelmapper.internal.Errors;
+import org.clairvoyant.modelmapper.internal.Errors;
 
 /**
  * Helper class  that  provides methods for handling protocol buffer classes.

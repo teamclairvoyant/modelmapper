@@ -17,8 +17,8 @@ package org.modelmapper.protobuf.primitive;
 
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Int64Value;
-import org.modelmapper.Converter;
-import org.modelmapper.spi.MappingContext;
+import org.clairvoyant.modelmapper.Converter;
+import org.clairvoyant.modelmapper.spi.MappingContext;
 
 /**
  * Converters for bool.

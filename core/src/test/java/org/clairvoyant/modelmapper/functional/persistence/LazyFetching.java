@@ -3,13 +3,11 @@ package org.clairvoyant.modelmapper.functional.persistence;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.PersistenceUnitUtil;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceUnitUtil;
-
 import org.clairvoyant.modelmapper.AbstractTest;
 import org.clairvoyant.modelmapper.Condition;
 import org.clairvoyant.modelmapper.spi.MappingContext;
@@ -42,7 +40,8 @@ public class LazyFetching extends AbstractTest {
     final PersistenceUnitUtil unitUtil = em.getEntityManagerFactory().getPersistenceUnitUtil();
     modelMapper.getConfiguration().setPropertyCondition(new Condition<Object, Object>() {
       public boolean applies(MappingContext<Object, Object> context) {
-        return unitUtil.isLoaded(context.getSource());
+        // context.getSource() will be null in our custom implementation
+        return unitUtil.isLoaded(((Company) context.getParent().getSource()).getEmployees());
       }
     });
     CompanyDTO dto = modelMapper.map(c, CompanyDTO.class);

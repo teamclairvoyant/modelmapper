@@ -15,6 +15,7 @@
  */
 package org.clairvoyant.modelmapper.internal;
 
+import jakarta.persistence.Entity;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -167,7 +168,12 @@ public class MappingEngineImpl implements MappingEngine {
     if (mapping.getCondition() == null && mapping.isSkipped()) // skip()
       return;
 
-    Object source = resolveSourceValue(context, mapping);
+    Object source = null;
+    final boolean isSourceAnEntity = context.getSourceType().isAnnotationPresent(Entity.class);
+
+    if(!isSourceAnEntity){
+      source = resolveSourceValue(context, mapping);
+    }
     MappingContextImpl<Object, Object> propertyContext = propertyContextFor(context, source,
         mappingImpl);
 
@@ -184,6 +190,13 @@ public class MappingEngineImpl implements MappingEngine {
         return;
       }
     }
+
+    if(isSourceAnEntity){
+      source = resolveSourceValue(context, mapping);
+      propertyContext = propertyContextFor(context, source,
+          mappingImpl);
+    }
+
     setDestinationValue(context, propertyContext, mappingImpl);
   }
 
